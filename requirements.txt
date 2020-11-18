@@ -1,0 +1,5 @@
+asgiref==3.2.10
+Django==3.0.8
+mysqlclient @ file:///C:/Users/Admin/Desktop/Mycalendar/mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
+pytz==2020.1
+sqlparse==0.3.1

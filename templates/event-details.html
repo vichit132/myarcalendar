@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% comment %} <script>
+            function del(url){
+                if (comfirm('ลบ')){
+                    document.location =url ;
+                }
+            }
+            </script> {% endcomment %}
+{% block title %}
+Event Details
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="clearfix">
+            <a class="btn btn-info right mr-2" href="{% url 'calendarapp:event_edit' event.pk %}"> Edit Event </a>
+            <a class="btn btn-info right " href="{% url 'calendarapp:event_delete' event.pk %}"> Delete Event </a>
+            {% comment %} <a href="javasript:del(
+                '{% url 'event_delete' id=post.id %}')">Delete Event </a> {% endcomment %}
+        </div>
+        <div class="clearfix">
+            <h3>Event Name: {{ event.title }}</h3>
+            <p>From <span style="color: gray;">{{ event.start_time }}</span> To <span style="color: gray;">{{ event.end_time }}</span></p>
+            <hr>
+            <h3>{{ event.description }}</h3>
+        </div>
+        <hr>
+    </div>
+{% endblock %}

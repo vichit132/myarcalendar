@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+{% block content %}
+<div class="container">
+    <form>
+    {{form.name.label}}
+    {{form.name}}
+    <button>Search</button> 
+    </form>
+    <br>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in data %}
+  <tr>
+      <th scope="row">{{post.start_time}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.description}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+</div>
+{% endblock %}
